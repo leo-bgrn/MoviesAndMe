@@ -1,9 +1,9 @@
-const API_TOKEN = "ec8a6e4a41161bf2e77f42bc3e10f917";
+import TMDB_API_TOKEN from "./secrets";
 
 export function getFilmsFromApiWithSearchedText(text, page) {
   const url =
     "https://api.themoviedb.org/3/search/movie?api_key=" +
-    API_TOKEN +
+    TMDB_API_TOKEN +
     "&language=fr&query=" +
     text +
     "&page=" +
@@ -22,7 +22,7 @@ export function getFilmDetailFromApi(id) {
     "https://api.themoviedb.org/3/movie/" +
     id +
     "?api_key=" +
-    API_TOKEN +
+    TMDB_API_TOKEN +
     "&language=fr";
   return fetch(newLocal)
     .then((response) => response.json())
